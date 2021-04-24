@@ -42,5 +42,7 @@ class WebHookRatKiller {
             Thread.sleep(2000)
             println "Kill request: ${s = kill.send().parse().getBody()}"
         }
+
+        println 'Killed.'
     }
 }
