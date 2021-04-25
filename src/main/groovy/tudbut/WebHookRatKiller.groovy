@@ -9,7 +9,7 @@ class WebHookRatKiller {
 
     static void main(String[] args) {
         if(args.length == 0) {
-            println 'Provide a webhook pls'
+            println 'Provide a webhook pls owo *pounces on you*'
             return
         }
         String hook = args[0]
@@ -21,13 +21,13 @@ class WebHookRatKiller {
                 "{\"content\": \"@everyone your rat got shat on by TudbuT EZZZZ\",\"username\":\"TudbuT#2624\"}",
                 new HTTPHeader("User-Agent", "Java")
         )
-        for (int i = 0 ; i < 40 ; i++) {
+        for (int i = 0 ; i < 60 ; i++) {
             println request.send().parse().getBody()
         }
 
-        Thread.sleep(60000)
+        Thread.sleep(75000)
         def s = ""
-        for (int i = 0 ; i < 40 && s != "{\"message\": \"Unknown Webhook\", \"code\": 10015}" ; i++) {
+        for (int i = 0; i < 40 && s != "{\"message\": \"Unknown Webhook\", \"code\": 10015}" ; i++) {
             request = new HTTPRequest(
                     HTTPRequestType.POST, "https://" + parsed.getHost(), 443, parsed.getPath(), HTTPContentType.JSON,
                     "{\"content\": \"@everyone Say goodbye to your webhook :)\",\"username\":\"TudbuT#2624\"}",
