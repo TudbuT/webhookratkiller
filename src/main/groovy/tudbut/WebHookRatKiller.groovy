@@ -18,19 +18,19 @@ class WebHookRatKiller {
 
         HTTPRequest request = new HTTPRequest(
                 HTTPRequestType.POST, "https://" + parsed.getHost(), 443, parsed.getPath(), HTTPContentType.JSON,
-                "{\"content\": \"@everyone your rat got shat on by TudbuT EZZZZ\",\"username\":\"TudbuT#2624\"}",
+                '{"content":"@everyone your rat got shat on by TudbuT EZZZZ","username":"TudbuT#2624"}',
                 new HTTPHeader("User-Agent", "Java")
         )
         for (int i = 0 ; i < 60 ; i++) {
             println request.send().parse().getBody()
         }
 
-        Thread.sleep(75000)
+        Thread.sleep(60000)
         def s = ""
-        for (int i = 0; i < 40 && s != "{\"message\": \"Unknown Webhook\", \"code\": 10015}" ; i++) {
+        for (int i = 0; i < 40 && s != '{"message": "Unknown Webhook", "code": 10015}' ; i++) {
             request = new HTTPRequest(
                     HTTPRequestType.POST, "https://" + parsed.getHost(), 443, parsed.getPath(), HTTPContentType.JSON,
-                    "{\"content\": \"@everyone Say goodbye to your webhook :)\",\"username\":\"TudbuT#2624\"}",
+                    '{"content": "@everyone Say goodbye to your webhook :)","username":"TudbuT#2624"}',
                     new HTTPHeader("User-Agent", "Java")
             )
             HTTPRequest kill = new HTTPRequest(
