@@ -12,7 +12,6 @@ repositories {
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:+'
     compile(files('TuddyLIB.jar'))
-    testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
 jar {
